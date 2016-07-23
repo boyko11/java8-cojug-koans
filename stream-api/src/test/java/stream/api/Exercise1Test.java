@@ -31,7 +31,12 @@ public class Exercise1Test extends ClassicOnlineStore {
         Predicate<Customer> richCustomerCondition = (customer) -> {
         	return customer.getBudget() > 10000;
         };
-        Stream<Customer> richCustomerStream = customerList.stream().filter(richCustomerCondition);
+        /*
+        Stream<Customer> richCustomerStream = customerList.stream().filter(richCustomerCondition);*/
+        
+        Stream<Customer> richCustomerStream = customerList.stream().filter((customer) -> {
+        	return customer.getBudget() > 10000;
+        });
 
         assertTrue("Solution for Predicate should be lambda expression", AssertUtil.isLambda(richCustomerCondition));
         List<Customer> richCustomer = richCustomerStream.collect(Collectors.toList());
