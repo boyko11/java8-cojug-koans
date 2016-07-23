@@ -30,7 +30,7 @@ public class Exercise2Test {
     public void localTimeOfHourToNanoSec() {
         /**
          * Create a {@link LocalTime} of 23:07:03.1 by using {@link LocalTime#of}
-         */
+         */                                           
         LocalTime localTime = LocalTime.of(23, 7, 3, 100000000);
 
         assertThat(localTime.toString(), is("23:07:03.100"));
