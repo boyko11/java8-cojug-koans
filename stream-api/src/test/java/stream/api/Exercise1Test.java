@@ -49,10 +49,16 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Use method reference(best) or lambda expression(okay) for creating {@link Function} which will
          * convert {@link Customer} to {@link Integer}, and then apply it by using {@link Stream#map}.
          */
-        Function<Customer, Integer> getAgeFunction = (customer) -> {
+/*        Function<Customer, Integer> getAgeFunction = (customer) -> {
         	return customer.getAge();
-        };
-        Stream<Integer> ageStream = customerList.stream().map(getAgeFunction);
+        };*/
+        Function<Customer, Integer> getAgeFunction = Customer::getAge;
+        //Stream<Integer> ageStream = customerList.stream().map(getAgeFunction);
+/*        Stream<Integer> ageStream = customerList.stream().map((customer) -> {
+        	return customer.getAge();
+        });*/
+        
+        Stream<Integer> ageStream = customerList.stream().map(Customer::getAge);
 
         assertTrue(AssertUtil.isLambda(getAgeFunction));
         List<Integer> richCustomer = ageStream.collect(Collectors.toList());
