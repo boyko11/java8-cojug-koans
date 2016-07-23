@@ -1,19 +1,16 @@
 package date.and.time.api;
 
-import common.test.tool.annotation.Necessity;
-import common.test.tool.dataset.DateAndTimes;
-
-import org.junit.Test;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.TemporalAmount;
-import java.time.temporal.TemporalUnit;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import common.test.tool.annotation.Necessity;
+import common.test.tool.dataset.DateAndTimes;
 
 public class Exercise2Test {
 
